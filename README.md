@@ -6,18 +6,18 @@ config/filesystems.php
 
 ```
 'bos' => [
-    'driver'  => 'bos',
-    'bucket'  => env('BOS_BUCKET', ''),
-    //  bos 根目录文件夹
-    'prefix'  => env('BOS_PREFIX', ''),
+    'driver' => 'bos',
+    'bucket' => env('BAIDU_BOS_BUCKET'),
+    'prefix' => env('BOS_PREFIX', 'bos'),
+    'expire' => -1,
     'options' => [
         'credentials' => [
-            'accessKeyId'     => env('BOS_AK', ''),
-            'secretAccessKey' => env('BOS_SK', ''),
-        ],
-        'endpoint'    => 'bj.bcebos.com',
-        'protocol'    => 'https',
+        'accessKeyId' => env('BAIDU_ACCESS_KEY_ID'),
+        'secretAccessKey' => env('BAIDU_SECRET_ACCESS_KEY')
     ],
+    'endpoint' => env('BAIDU_ENDPOINT'),
+    'protocol' => 'https',
+    ]
 ],
 ```
 
